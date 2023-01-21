@@ -61,9 +61,8 @@ export default createStore({
       title: "A Haunting in Venice",
       year: "2023",
     },
-    comingSoonTrailer:
-      "https://www.imdb.com/video/imdb/vi1371587865/imdb/embed",
-    test: 0,
+    trailerUrl: "https://www.imdb.com/video/imdb/vi1371587865/imdb/embed",
+    showTrailerModal: true,
   },
   getters: {},
   mutations: {
@@ -75,8 +74,14 @@ export default createStore({
       state.comingSoon = data;
       console.log(state.comingSoon);
     },
-    setComingSoonTrailer(state, data) {
-      state.comingSoonTrailer = data;
+    setTrailerUrl(state, data) {
+      state.trailerUrl = data;
+    },
+    showTrailerModal(state) {
+      state.showTrailerModal = true;
+    },
+    hideTrailerModal(state) {
+      state.showTrailerModal = false;
     },
   },
   actions: {
@@ -114,7 +119,7 @@ export default createStore({
           `https://imdb-api.com/en/API/Trailer/${process.env.VUE_APP_API_KEY}/${state.comingSoon.id}`
         )
         .then((res) => {
-          // this.commit("setComingSoonTrailer", randomMovie);
+          // this.commit("setTrailerUrl", res.data.linkEmbed);
           console.log(res.data.linkEmbed);
         })
         .catch((err) => console.log(err.message));

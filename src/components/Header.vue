@@ -5,7 +5,7 @@
         <h3>coming soon...</h3>
         <h1>{{ $store.state.comingSoon.title }}</h1>
         <p>{{ $store.state.comingSoon.plot }}</p>
-        <button>Play Trailer</button>
+        <button @click="$store.commit('showTrailerModal')">Play Trailer</button>
       </div>
       <img :src="$store.state.comingSoon.image" />
     </div>
