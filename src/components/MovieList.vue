@@ -16,7 +16,10 @@
         <h3 class="rank">{{ movie.rank }}</h3>
         <img :src="movie.image" />
         <div class="copy">
-          <h2 class="title">{{ movie.title }}</h2>
+          <RouterLink :to="{ name: 'movieDetails', params: { id: movie.id } }"
+            ><h2 class="title">{{ movie.title }}</h2></RouterLink
+          >
+
           <v-icon scale="1.25" class="star" name="bi-star-fill" />
           <span class="rating">{{ movie.imDbRating }}</span>
           <span>/ 10</span>
