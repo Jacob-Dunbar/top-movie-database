@@ -12,7 +12,7 @@ export default {
   name: "App",
   components: { Navbar, Footer },
   mounted() {
-    this.$store.dispatch("getComingSoonData");
+    // this.$store.dispatch("getComingSoonData");
     // this.$store.dispatch("get250Data");
   },
 };

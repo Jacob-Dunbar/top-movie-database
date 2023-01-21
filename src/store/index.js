@@ -41,7 +41,28 @@ export default createStore({
         imDbRatingCount: "2661743",
       },
     ],
-    comingSoon: [],
+    comingSoon: {
+      contentRating: null,
+      directorList: [],
+      directors: null,
+      fullTitle: "A Haunting in Venice (2023)",
+      genres: "Crime, Drama, Mystery",
+      id: "tt22687790",
+      imDbRating: null,
+      imDbRatingCount: null,
+      image:
+        "https://m.media-amazon.com/images/M/MV5BOTA2MDc4NmYtNTViYS00Njc1LTg0NmQtNzRiNTkxNDk3OGE4XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_Ratio0.6757_AL_.jpg",
+      metacriticRating: null,
+      plot: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora eos ipsum ut deleniti exercitationem laudantium ducimus sed dolorum dolores corrupti.",
+      releaseState: "Sep 15, 2023",
+      runtimeMins: null,
+      runtimeStr: null,
+      stars: "Michelle Yeoh, Kelly Reilly, Kenneth Branagh, Jamie Dornan",
+      title: "A Haunting in Venice",
+      year: "2023",
+    },
+    comingSoonTrailer:
+      "https://www.imdb.com/video/imdb/vi1371587865/imdb/embed",
     test: 0,
   },
   getters: {},
@@ -53,6 +74,9 @@ export default createStore({
     setComingSoon(state, data) {
       state.comingSoon = data;
       console.log(state.comingSoon);
+    },
+    setComingSoonTrailer(state, data) {
+      state.comingSoonTrailer = data;
     },
   },
   actions: {
@@ -79,6 +103,19 @@ export default createStore({
         .then((res) => {
           const randomMovie = res.data.items[Math.floor(Math.random() * 100)];
           this.commit("setComingSoon", randomMovie);
+          this.dispatch("getComingSoonTrailer");
+        })
+        .catch((err) => console.log(err.message));
+    },
+    getComingSoonTrailer({ state }) {
+      console.log(state.comingSoon.id);
+      axios
+        .get(
+          `https://imdb-api.com/en/API/Trailer/${process.env.VUE_APP_API_KEY}/${state.comingSoon.id}`
+        )
+        .then((res) => {
+          // this.commit("setComingSoonTrailer", randomMovie);
+          console.log(res.data.linkEmbed);
         })
         .catch((err) => console.log(err.message));
     },
