@@ -1,6 +1,20 @@
 import { createStore } from "vuex";
 import axios from "axios";
 
+function removeThe(title) {
+  if (
+    title.charAt(0) === "T" &&
+    title.charAt(1) === "H" &&
+    title.charAt(2) === "E" &&
+    title.charAt(3) === " "
+  ) {
+    return title.slice(4);
+  } else {
+    console.log("not");
+    return title;
+  }
+}
+
 export default createStore({
   state: {
     top250: [
@@ -62,7 +76,7 @@ export default createStore({
       year: "2023",
     },
     trailerUrl: "https://www.imdb.com/video/imdb/vi1371587865/imdb/embed",
-    showTrailerModal: true,
+    showTrailerModal: false,
   },
   getters: {},
   mutations: {
@@ -82,6 +96,19 @@ export default createStore({
     },
     hideTrailerModal(state) {
       state.showTrailerModal = false;
+    },
+    sortByRank(state) {
+      state.top250 = state.top250.sort((a, b) => a.rank - b.rank);
+    },
+    sortByTitle(state) {
+      state.top250 = state.top250.sort((a, b) => {
+        let titleA = removeThe(a.title.toUpperCase());
+        let titleB = removeThe(b.title.toUpperCase());
+
+        if (titleA < titleB) return -1;
+        if (titleA < titleB) return 1;
+        return 0;
+      });
     },
   },
   actions: {

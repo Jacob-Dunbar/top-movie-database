@@ -2,7 +2,8 @@
   <section>
     <header>
       <h1>Top Movies</h1>
-      <button>SORT</button>
+      <button @click="$store.commit('sortByTitle')">title</button>
+      <button @click="$store.commit('sortByRank')">rank</button>
     </header>
     <!-- <h2>{{ $store.state.top250[0].title }}</h2> -->
     <main>
