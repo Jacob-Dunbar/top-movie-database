@@ -11,6 +11,9 @@ import Footer from "./components/Footer.vue";
 export default {
   name: "App",
   components: { Navbar, Footer },
+  mounted() {
+    this.$store.dispatch("fetch250Data");
+  },
 };
 </script>
 
