@@ -1,6 +1,8 @@
 <template>
   <header>
-    <h2>Header {{ $store.state.test }}</h2>
+    <!-- <div v-if="$store.state.comingSoon.length">
+      {{ $store.state.comingSoon[].title }}
+    </div> -->
   </header>
 </template>
 

@@ -51,7 +51,7 @@ export default createStore({
       // console.log(state.top250[0]);
     },
     setComingSoon(state, data) {
-      state.comingSoon = data.items;
+      state.comingSoon = data;
       console.log(state.comingSoon);
     },
   },
@@ -75,8 +75,10 @@ export default createStore({
         )
         // .then((res) => res.json())
         // .then(console.log(data))
+
         .then((res) => {
-          this.commit("setComingSoon", res.data);
+          const randomMovie = res.data.items[Math.floor(Math.random() * 100)];
+          this.commit("setComingSoon", randomMovie);
         })
         .catch((err) => console.log(err.message));
     },
