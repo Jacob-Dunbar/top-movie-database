@@ -1,6 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
 
-createApp(App).use(store).use(router).mount('#app')
+import { OhVueIcon, addIcons } from "oh-vue-icons";
+import { BiStarFill } from "oh-vue-icons/icons";
+
+addIcons(BiStarFill);
+
+const app = createApp(App);
+app.component("v-icon", OhVueIcon);
+
+app.use(store).use(router).mount("#app");
