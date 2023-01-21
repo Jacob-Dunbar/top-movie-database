@@ -12,7 +12,8 @@ export default {
   name: "App",
   components: { Navbar, Footer },
   mounted() {
-    this.$store.dispatch("fetch250Data");
+    this.$store.dispatch("getComingSoonData");
+    // this.$store.dispatch("get250Data");
   },
 };
 </script>
