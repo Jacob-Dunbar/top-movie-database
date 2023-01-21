@@ -4,15 +4,15 @@
       <h2>Top Movies</h2>
       <button>SORT</button>
     </header>
+    <!-- <h2>{{ $store.state.top250[0].title }}</h2> -->
     <main>
-      <div class="movie-card">
-        <h2>Movie</h2>
-      </div>
-      <div class="movie-card">
-        <h2>Movie</h2>
-      </div>
-      <div class="movie-card">
-        <h2>Movie</h2>
+      <div
+        v-if="$store.state.top250.length"
+        v-for="movie in $store.state.top250"
+        key="movie.id"
+        class="movie-card"
+      >
+        <h2>{{ movie.title }}</h2>
       </div>
     </main>
   </section>
