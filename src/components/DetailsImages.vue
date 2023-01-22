@@ -21,7 +21,7 @@
 <script></script>
 
 <style scoped>
-section.images {
+.images {
   margin-bottom: 25px;
 }
 .section-heading {
@@ -32,12 +32,37 @@ section.images {
 
 .gallery {
   display: flex;
-  height: 300px;
+  height: 200px;
   width: 100%;
   overflow-x: scroll;
 }
 
 img {
   margin-left: 15px;
+}
+
+@media (min-width: 540px) {
+  section.images {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    flex-grow: 1;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
+  .gallery {
+    height: 100px;
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: 912px) {
+  .gallery {
+    height: 250px;
+  }
 }
 </style>

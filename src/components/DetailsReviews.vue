@@ -35,7 +35,14 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  mounted() {
+    this.$store.commit("resetReviewsLimit");
+    this.$store.commit("setLimitedReviews");
+  },
+};
+</script>
 
 <style scoped>
 section.reviews {
