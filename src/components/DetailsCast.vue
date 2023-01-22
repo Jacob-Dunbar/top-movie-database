@@ -1,0 +1,60 @@
+<template>
+  <h1 class="section-heading">Cast</h1>
+  <div class="cast-list">
+    <div v-for="member in $store.state.movieDetails.cast" class="member-card">
+      <div class="image-mask">
+        <img :src="member.image" :alt="member.name" />
+      </div>
+      <h2 class="member-name">{{ member.name }}</h2>
+      <h2 class="member-role">{{ member.asCharacter }}</h2>
+    </div>
+  </div>
+</template>
+
+<script></script>
+
+<style scoped>
+.section-heading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+.cast-list {
+  display: flex;
+  margin-top: 20px;
+  overflow-x: scroll;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 25px;
+}
+.image-mask {
+  width: 120px;
+  height: 120px;
+  margin-inline: 10px;
+  border-radius: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+img {
+  width: 100%;
+}
+
+.member-name {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.member-role {
+  text-align: center;
+  font-size: 0.8rem;
+
+  margin-top: 10px;
+}
+</style>
