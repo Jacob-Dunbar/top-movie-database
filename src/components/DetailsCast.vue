@@ -3,7 +3,15 @@
   <div class="cast-list">
     <div v-for="member in $store.state.movieDetails.cast" class="member-card">
       <div class="image-mask">
-        <img :src="member.image" :alt="member.name" />
+        <img
+          v-if="
+            member.image !==
+            'https://imdb-api.com/images/original/nopicture.jpg'
+          "
+          :src="member.image"
+          :alt="member.name"
+        />
+        <img v-else class="no-image" :src="member.image" :alt="member.name" />
       </div>
       <h2 class="member-name">{{ member.name }}</h2>
       <h2 class="member-role">{{ member.asCharacter }}</h2>
@@ -44,6 +52,10 @@
 
 img {
   width: 100%;
+}
+
+.no-image {
+  align-self: center;
 }
 
 .member-name {
