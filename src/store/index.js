@@ -77,6 +77,411 @@ export default createStore({
     },
     trailerUrl: "https://www.imdb.com/video/imdb/vi1371587865/imdb/embed",
     showTrailerModal: false,
+    movieDetailsId: "",
+    movieDetails: {
+      poster:
+        "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.6762_AL_.jpg",
+      title: "The Shawshank Redemption",
+      year: "1994",
+      rating: "9.3",
+      votes: "2684692",
+      plot: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      images: [
+        {
+          title:
+            "Morgan Freeman, William Sadler, Larry Brandenburg, Neil Giuntoli, Brian Libby, David Proval, and Joseph Ragno in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTM0NjUxMDk5MF5BMl5BanBnXkFtZTcwNDMxNDY3Mw@@._V1_Ratio1.5000_AL_.jpg",
+        },
+        {
+          title:
+            "Clancy Brown, Dion Anderson, and Brian Delate in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTk3NDE2Nzg3Nl5BMl5BanBnXkFtZTcwNTMxNDY3Mw@@._V1_Ratio1.5000_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTg0MDgwNjc5N15BMl5BanBnXkFtZTcwNjMxNDY3Mw@@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTkzMTY0MjE5MV5BMl5BanBnXkFtZTcwODMxNDY3Mw@@._V1_Ratio1.5200_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNTYxOTYyMzE3NV5BMl5BanBnXkFtZTcwOTMxNDY3Mw@@._V1_Ratio1.4800_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman, Gil Bellows, and Brian Libby in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTgxMTU1MDkwOV5BMl5BanBnXkFtZTcwMDQxNDY3Mw@@._V1_Ratio1.4800_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTQ5NTI4NDAxMV5BMl5BanBnXkFtZTcwMTQxNDY3Mw@@._V1_Ratio1.5000_AL_.jpg",
+        },
+        {
+          title:
+            "Larry Brandenburg, David Proval, and Joseph Ragno in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTMyODE3NTM1Ml5BMl5BanBnXkFtZTcwMzQxNDY3Mw@@._V1_Ratio1.4800_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman, William Sadler, Larry Brandenburg, Neil Giuntoli, Brian Libby, David Proval, and James Whitmore in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTMxNzAwMzE0Nl5BMl5BanBnXkFtZTcwNDQxNDY3Mw@@._V1_Ratio1.5000_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTg3Nzg3ODU0NV5BMl5BanBnXkFtZTcwNTQxNDY3Mw@@._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "James Whitmore in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNzAwOTk3MDg5MV5BMl5BanBnXkFtZTcwNjQxNDY3Mw@@._V1_Ratio1.6000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTg4MDA2MDM5Nl5BMl5BanBnXkFtZTcwOTU5MTQ2Mg@@._V1_Ratio1.4600_AL_.jpg",
+        },
+        {
+          title: "Frank Darabont in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTkzMDA1OTUxNF5BMl5BanBnXkFtZTcwMzMxNDY3Mw@@._V1_Ratio1.5000_AL_.jpg",
+        },
+        {
+          title:
+            "Tim Robbins, Frank Darabont, and James Whitmore in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTgzOTc3Njc0Nl5BMl5BanBnXkFtZTcwNzMxNDY3Mw@@._V1_Ratio1.5000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Frank Darabont in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTM0NzQ1Nzg2N15BMl5BanBnXkFtZTcwMjQxNDY3Mw@@._V1_Ratio1.5200_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BOWJlYjkzNDgtZDI1NS00YTkwLTgxNGItZDYzZDcxNWRjNDA2XkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMzJkNjNiOWUtYzNmOC00MGFjLWE5N2EtMjdkYjEwMzQ4NzBhXkEyXkFqcGdeQXVyMTAyOTE2ODg0._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYTcxYTA0MjAtYzdjNC00ZmFmLTgwYWItMmVhYTY5ZGZhOWQzXkEyXkFqcGdeQXVyMTAyOTE2ODg0._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZjk5M2JhZTYtMTNjZS00YTJhLThlZWYtYTAyYTVhYWFiMTExXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTA1MjE0Nzk4MDleQTJeQWpwZ15BbWU4MDA0NjIxMjAx._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman, Tim Robbins, Clancy Brown, Gil Bellows, Bob Gunton, and James Whitmore in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTc4NjY5OTYyM15BMl5BanBnXkFtZTgwMTQ2MjEyMDE@._V1_Ratio1.3200_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNzUzNzI0MjAxMl5BMl5BanBnXkFtZTgwMjQ2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BOTc2MjMxNzIyMF5BMl5BanBnXkFtZTgwNDQ2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTc0NDA0NzU5NF5BMl5BanBnXkFtZTgwNTQ2MjEyMDE@._V1_Ratio1.3200_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BOTcxMDAzNTcwM15BMl5BanBnXkFtZTgwNjQ2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTcxMjg2MzA0OV5BMl5BanBnXkFtZTgwNzQ2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTQyMTAzNDMwNF5BMl5BanBnXkFtZTgwODQ2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman, Tim Robbins, Clancy Brown, Gil Bellows, Bob Gunton, and James Whitmore in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTU1NTUwMjQxN15BMl5BanBnXkFtZTgwOTQ2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTQ1ODM2MjY3OV5BMl5BanBnXkFtZTgwMTU2MjEyMDE@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTc3NjM4MTY3MV5BMl5BanBnXkFtZTcwODk4Mzg3OA@@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTIyODQ2MjgxOF5BMl5BanBnXkFtZTYwMzUzODQ5._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTcxMzgyNzk2Ml5BMl5BanBnXkFtZTcwNDEzNTkyMQ@@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZGVmZjg5NTEtMjJhNS00OWJjLThjOTYtZTk0NjUwMjA3MjkyXkEyXkFqcGdeQXVyMzQ3Nzk5MTU@._V1_Ratio1.5400_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYWI5ZDgyZTctMGJhYi00MjcxLThmZTQtMTA4MzViMGQ0YWJmXkEyXkFqcGdeQXVyMzQ3Nzk5MTU@._V1_Ratio1.0000_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZDJiNmM0YTctYTU1ZS00MDAwLTkyOTQtMDUwZDFiZTk4Y2MzXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZTg3MDUxOGMtOWEzOS00YzUwLTkwOWYtNmUwNzg1Mzg5MzMyXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Clancy Brown in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BODMyZDZlNjQtMjQxYi00NDE1LTljMmMtZTZmYzZjNTg5NTkyXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYTIwOTViNTMtNGIzYi00YWFmLWI5ZjAtMmJlNmViODM3YmIwXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BOGRlNGRkM2QtZTUwZS00M2U4LThlZDQtZWQzNzg4NjRiMGM1XkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZGVhMGZiN2YtZDNiMy00NmRhLWEzOTQtN2QyMGYwNmU3MjI4XkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYWNkZWZhMGUtMTQwZC00NTYxLThiODItYmM5MGZiOWMwYjQ4XkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZDJhMjU0MWUtYTIxMi00MGU1LWFlNzItODU2YTZiNDdjZDMxXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYjU3YzYwYjYtNjZmMy00M2M0LTg0NjYtMGZiZGI2YzY4OTYwXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNzg2NGM3MmEtZTc4Mi00NTMzLWJjM2QtMmE5YWFjNWZhNmMwXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BYTY2ZDUwYjUtZTE3MC00ODc4LWE5MmEtOTAxZjNmYTkyOTQzXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Morgan Freeman in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMGI0MWVjYjgtZTM2ZC00ZThlLWJmODAtYjZhOTY2YzJhYjBkXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title:
+            "Morgan Freeman and Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BY2UyMmY3YTMtYzkyYi00M2FkLWI1NWQtNDQzYzdhZDllYjNlXkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+        {
+          title: "Tim Robbins in The Shawshank Redemption (1994)",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BZDZmMjdjMGItNWUwYi00NmUwLTgzZjItNjBiODM4NTYwZTQ5XkEyXkFqcGdeQXVyMTE0NTczNDAz._V1_Ratio1.7800_AL_.jpg",
+        },
+      ],
+      cast: [
+        {
+          id: "nm0000209",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTI1OTYxNzAxOF5BMl5BanBnXkFtZTYwNTE5ODI4._V1_Ratio1.0000_AL_.jpg",
+          name: "Tim Robbins",
+          asCharacter: "Andy Dufresne",
+        },
+        {
+          id: "nm0000151",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Morgan Freeman",
+          asCharacter: "Ellis Boyd 'Red' Redding",
+        },
+        {
+          id: "nm0348409",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMjUyZDQ0NjktZmM5ZS00NzcxLTliMWYtNWUxNDcyMmExZjU0XkEyXkFqcGdeQXVyMTE1MjA4NzM@._V1_Ratio1.0000_AL_.jpg",
+          name: "Bob Gunton",
+          asCharacter: "Warden Norton",
+        },
+        {
+          id: "nm0006669",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTA1NjU3NDg1MTheQTJeQWpwZ15BbWU2MDI4OTcxMw@@._V1_Ratio1.0000_AL_.jpg",
+          name: "William Sadler",
+          asCharacter: "Heywood",
+        },
+        {
+          id: "nm0000317",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTUxODY3NjAzMF5BMl5BanBnXkFtZTcwMTQ5MjYwNg@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Clancy Brown",
+          asCharacter: "Captain Hadley",
+        },
+        {
+          id: "nm0004743",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTgxMzc0MDAzNV5BMl5BanBnXkFtZTgwMzUzMTI0MzE@._V1_Ratio1.0000_AL_.jpg",
+          name: "Gil Bellows",
+          asCharacter: "Tommy",
+        },
+        {
+          id: "nm0001679",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BODE5NDRlZTctMjkzNC00NGY3LThhYTItNzUxZjgzYzFmMjQxXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_Ratio1.0000_AL_.jpg",
+          name: "Mark Rolston",
+          asCharacter: "Bogs Diamond",
+        },
+        {
+          id: "nm0926235",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTg5MzkxMTkxOV5BMl5BanBnXkFtZTcwNTEzNTgxMw@@._V1_Ratio1.0000_AL_.jpg",
+          name: "James Whitmore",
+          asCharacter: "Brooks Hatlen",
+        },
+        {
+          id: "nm0218810",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTQ0Mjc3NDA1OV5BMl5BanBnXkFtZTcwMTg3MDEyOA@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Jeffrey DeMunn",
+          asCharacter: "1946 D.A.",
+        },
+        {
+          id: "nm0104594",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BNDczZGZiZjMtZGRmMC00Y2I5LThiNzAtZGQzZWYzZWFiNzM0XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Larry Brandenburg",
+          asCharacter: "Skeet",
+        },
+        {
+          id: "nm0321358",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMjI0OTUxNjIyNF5BMl5BanBnXkFtZTcwNDE0MDcwOA@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Neil Giuntoli",
+          asCharacter: "Jigger",
+        },
+        {
+          id: "nm0508742",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMjI2NDYwNzU0NV5BMl5BanBnXkFtZTcwMjYwMTcwOA@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Brian Libby",
+          asCharacter: "Floyd",
+        },
+        {
+          id: "nm0698998",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMjE0MTU0NjU3Nl5BMl5BanBnXkFtZTYwNTgzNjY0._V1_Ratio1.0000_AL_.jpg",
+          name: "David Proval",
+          asCharacter: "Snooze",
+        },
+        {
+          id: "nm0706554",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTQyNzMyNTUwNV5BMl5BanBnXkFtZTcwNjQ2MTcwOA@@._V1_Ratio1.0000_AL_.jpg",
+          name: "Joseph Ragno",
+          asCharacter: "Ernie",
+        },
+        {
+          id: "nm0161980",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMjZmOTU1ZDktNDdkZi00YjkxLWFiODYtMjUzZWVhYmFiYjIxXkEyXkFqcGdeQXVyMTI3MzAzOTM@._V1_Ratio1.0000_AL_.jpg",
+          name: "Jude Ciccolella",
+          asCharacter: "Guard Mert",
+        },
+        {
+          id: "nm0005204",
+          image:
+            "https://m.media-amazon.com/images/M/MV5BMTI2Mjc1NzExN15BMl5BanBnXkFtZTYwNjUzMzQz._V1_Ratio1.0000_AL_.jpg",
+          name: "Paul McCrane",
+          asCharacter: "Guard Trout",
+        },
+        {
+          id: "nm0086169",
+          image: "https://imdb-api.com/images/original/nopicture.jpg",
+          name: "Renee Blaine",
+          asCharacter: "Andy Dufresne's Wife",
+        },
+        {
+          id: "nm0542957",
+          image: "https://imdb-api.com/images/original/nopicture.jpg",
+          name: "Scott Mann",
+          asCharacter: "Glenn Quentin",
+        },
+      ],
+    },
   },
   getters: {},
   mutations: {
@@ -109,6 +514,13 @@ export default createStore({
         if (titleA < titleB) return 1;
         return 0;
       });
+    },
+    setMovieDetailsId(state, id) {
+      state.movieDetailsId = id;
+    },
+    setMovieDetails(state, data) {
+      state.movieDetails = data;
+      console.log(state.movieDetails);
     },
   },
   actions: {
@@ -148,6 +560,28 @@ export default createStore({
         .then((res) => {
           // this.commit("setTrailerUrl", res.data.linkEmbed);
           console.log(res.data.linkEmbed);
+        })
+        .catch((err) => console.log(err.message));
+    },
+    getMovieDetails({ state }) {
+      axios
+        .get(
+          `https://imdb-api.com/en/API/Title/${process.env.VUE_APP_API_KEY}/${state.movieDetailsId}/images`
+        )
+        // .then((res) => res.json())
+        // .then(console.log(data))
+
+        .then((res) => {
+          this.commit("setMovieDetails", {
+            poster: res.data.image,
+            title: res.data.title,
+            year: res.data.year,
+            rating: res.data.imDbRating,
+            votes: res.data.imDbRatingVotes,
+            plot: res.data.plot,
+            images: res.data.images.items,
+            cast: res.data.actorList,
+          });
         })
         .catch((err) => console.log(err.message));
     },
