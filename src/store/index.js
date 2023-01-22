@@ -1,6 +1,5 @@
 import { createStore } from "vuex";
 import axios from "axios";
-import { SiTestcafe } from "oh-vue-icons/icons";
 
 function removeThe(title) {
   if (
@@ -521,6 +520,8 @@ export default createStore({
         warningSpoilers: false,
       },
     ],
+    limitedReviews: [],
+    reviewsLimit: 3,
   },
   getters: {},
   mutations: {
@@ -559,11 +560,20 @@ export default createStore({
     },
     setMovieDetails(state, data) {
       state.movieDetails = data;
-      console.log(state.movieDetails);
     },
     setMovieReviews(state, data) {
       state.movieReviews = data;
-      console.log(state.movieReviews);
+    },
+    setLimitedReviews(state) {
+      state.limitedReviews = state.movieReviews.slice(0, state.reviewsLimit);
+      console.log(state.limitedReviews);
+    },
+    increaseReviewsLimit(state) {
+      state.reviewsLimit = state.reviewsLimit + 3;
+      console.log(state.reviewsLimit);
+    },
+    resetReviewsLimit(state) {
+      state.reviewsLimit = 3;
     },
   },
   actions: {
@@ -634,8 +644,8 @@ export default createStore({
           `https://imdb-api.com/en/API/Reviews/${process.env.VUE_APP_API_KEY}/${state.movieDetailsId}`
         )
         .then((res) => {
-          console.log(res.data);
           this.commit("setMovieReviews", res.data.items);
+          this.commit("setLimitedReviews");
         })
         .catch((err) => console.log(err.message));
     },

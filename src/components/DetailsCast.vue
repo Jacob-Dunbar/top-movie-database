@@ -1,27 +1,33 @@
 <template>
-  <h1 class="section-heading">Cast</h1>
-  <div class="cast-list">
-    <div v-for="member in $store.state.movieDetails.cast" class="member-card">
-      <div class="image-mask">
-        <img
-          v-if="
-            member.image !==
-            'https://imdb-api.com/images/original/nopicture.jpg'
-          "
-          :src="member.image"
-          :alt="member.name"
-        />
-        <img v-else class="no-image" :src="member.image" :alt="member.name" />
+  <section class="cast">
+    <h1 class="section-heading">Cast</h1>
+    <div class="cast-list">
+      <div v-for="member in $store.state.movieDetails.cast" class="member-card">
+        <div class="image-mask">
+          <img
+            v-if="
+              member.image !==
+              'https://imdb-api.com/images/original/nopicture.jpg'
+            "
+            :src="member.image"
+            :alt="member.name"
+          />
+          <img v-else class="no-image" :src="member.image" :alt="member.name" />
+        </div>
+        <h2 class="member-name">{{ member.name }}</h2>
+        <h2 class="member-role">{{ member.asCharacter }}</h2>
       </div>
-      <h2 class="member-name">{{ member.name }}</h2>
-      <h2 class="member-role">{{ member.asCharacter }}</h2>
     </div>
-  </div>
+  </section>
 </template>
 
 <script></script>
 
 <style scoped>
+section.cast {
+  margin-bottom: 25px;
+}
+
 .section-heading {
   font-size: 1.5rem;
   margin-bottom: 10px;
