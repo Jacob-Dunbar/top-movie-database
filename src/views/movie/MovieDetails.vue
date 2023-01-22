@@ -16,6 +16,7 @@ export default {
   mounted() {
     // this.$store.commit("setMovieDetailsId", this.id);
     // this.$store.dispatch("getMovieDetails");
+    // this.$store.dispatch("getMovieReviews");
   },
 };
 </script>
