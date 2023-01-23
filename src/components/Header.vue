@@ -49,6 +49,7 @@ export default {
 <style scoped>
 header {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .blur-bg {
