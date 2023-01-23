@@ -22,9 +22,9 @@
   left: 0;
   position: fixed;
   background: rgba(0, 0, 0, 0.9);
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  max-width: 800px;
+
   display: flex;
   align-items: center;
 }
@@ -32,17 +32,24 @@
 .container {
   width: 100%;
   max-width: 100%;
+
   height: 0;
   padding-bottom: 56.25%;
   position: relative;
 }
 
-.container iframe {
+iframe {
   width: 100%;
   max-width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media (min-width: 912px) {
+  .wrapper {
+    padding: 250px;
+  }
 }
 </style>
