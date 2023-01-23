@@ -1,12 +1,12 @@
 <template>
-  <section>
+  <section class="movie-list">
     <header>
       <h1>Top Movies</h1>
       <button @click="$store.commit('sortByTitle')">title</button>
       <button @click="$store.commit('sortByRank')">rank</button>
     </header>
     <!-- <h2>{{ $store.state.top250[0].title }}</h2> -->
-    <main>
+    <main class="list">
       <div
         v-if="$store.state.top250.length"
         v-for="movie in $store.state.top250"
@@ -22,7 +22,7 @@
 
           <v-icon scale="1.25" class="star" name="bi-star-fill" />
           <span class="rating">{{ movie.imDbRating }}</span>
-          <span>/ 10</span>
+          <span class="/10">/ 10</span>
         </div>
       </div>
     </main>
@@ -32,7 +32,7 @@
 <script></script>
 
 <style scoped>
-section {
+section.movie-list {
   width: 100%;
 }
 
@@ -54,8 +54,12 @@ header button {
   padding: 5px 10px;
 }
 
-main {
+.list {
   margin: 0 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .movie-card {
@@ -68,7 +72,7 @@ main {
   align-items: flex-start;
 }
 
-.movie-card .rank {
+.rank {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -80,7 +84,7 @@ main {
   height: 35px;
 }
 
-.movie-card img {
+img {
   margin: 5px;
 }
 
@@ -88,16 +92,38 @@ main {
   padding: 5px;
 }
 
-.copy .title {
+.title {
   margin-bottom: 5px;
 }
 
-.copy .star {
+.star {
   margin-right: 5px;
 }
 
-.copy .rating {
+.rating {
   font-size: 2rem;
   margin-right: 5px;
+}
+
+@media (min-width: 540px) {
+  .copy {
+    width: 66%;
+    padding-left: 25px;
+  }
+  .rank {
+    position: static;
+    background: none;
+    font-size: 2.5rem;
+
+    width: 55px;
+    height: 55px;
+    flex-grow: 1;
+  }
+
+  .movie-card {
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+  }
 }
 </style>

@@ -2,10 +2,15 @@
   <header>
     <div class="wrapper" v-if="$store.state.comingSoon">
       <div class="copy">
-        <h3>coming soon...</h3>
-        <h1>{{ $store.state.comingSoon.title }}</h1>
-        <p>{{ $store.state.comingSoon.plot }}</p>
-        <button @click="$store.commit('showTrailerModal')">Play Trailer</button>
+        <h3 class="tag-line">coming soon...</h3>
+        <h1 class="title">{{ $store.state.comingSoon.title }}</h1>
+        <p class="plot">{{ $store.state.comingSoon.plot }}</p>
+        <button
+          class="trailer-button"
+          @click="$store.commit('showTrailerModal')"
+        >
+          Play Trailer
+        </button>
       </div>
       <img :src="$store.state.comingSoon.image" />
     </div>
@@ -17,10 +22,9 @@
 <style scoped>
 header {
   width: 100%;
-  background: lightgray;
 }
 
-header .wrapper {
+.wrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -35,17 +39,17 @@ header .wrapper {
   align-items: flex-start;
 }
 
-.copy h3 {
+.tag-line {
   text-transform: uppercase;
   font-size: 0.75rem;
   margin-bottom: 5px;
 }
-.copy h1 {
+.title {
   font-size: 1.25rem;
   margin-bottom: 5px;
 }
 
-.copy p {
+.plot {
   font-size: 0.9rem;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -54,7 +58,7 @@ header .wrapper {
   margin-bottom: 5px;
 }
 
-.copy button {
+.trailer-button {
   outline: none;
   border: none;
   background: black;
@@ -64,8 +68,7 @@ header .wrapper {
   margin-top: auto;
 }
 
-header .wrapper img {
-  width: 33%;
-  margin: 5px;
+img {
+  width: 50%;
 }
 </style>

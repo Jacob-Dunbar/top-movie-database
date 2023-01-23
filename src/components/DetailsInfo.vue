@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 section.info {
   margin-top: -20px;
   padding: 0 15px;

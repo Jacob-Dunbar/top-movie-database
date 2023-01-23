@@ -7,7 +7,7 @@
 
 <script></script>
 
-<style>
+<style scoped>
 .hero-container {
   width: 100%;
   position: relative;

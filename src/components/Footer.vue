@@ -6,7 +6,7 @@
 
 <script></script>
 
-<style>
+<style scoped>
 footer {
   width: 100%;
   background-color: grey;
