@@ -57,7 +57,7 @@ section.info {
   }
 
   .plot {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 80%;
     margin-top: 25px;
   }

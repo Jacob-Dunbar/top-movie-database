@@ -1,6 +1,6 @@
 <template>
   <div class="hero-container">
-    <button class="back-button" @click="back">Go back</button>
+    <button class="back-button" @click="this.$router.go(-1)">Go back</button>
     <img class="hero-image" :src="$store.state.movieDetails.poster" />
   </div>
 </template>
@@ -12,16 +12,16 @@
   width: 100%;
   position: relative;
   display: inline-block;
-  z-index: -10;
+}
+
+.back-button {
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
 }
 
 .hero-image {
   width: 100%;
-}
-
-.back-button {
-  position: absolute;
-  z-index: 10;
 }
 
 .hero-container::after {
@@ -29,6 +29,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   display: inline-block;
