@@ -26,6 +26,10 @@ export default {
   box-sizing: border-box;
 }
 
+body {
+  background: #0f1116;
+}
+
 a {
   color: #000;
   text-decoration: none;
