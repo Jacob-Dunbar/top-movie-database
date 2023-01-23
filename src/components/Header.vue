@@ -12,7 +12,9 @@
           Play Trailer
         </button>
       </div>
-      <img :src="$store.state.comingSoon.image" />
+      <div class="image-wrapper">
+        <img :src="$store.state.comingSoon.image" />
+      </div>
     </div>
   </header>
 </template>
@@ -31,7 +33,7 @@ header {
 }
 
 .copy {
-  width: 80vw;
+  width: 50%;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -68,7 +70,66 @@ header {
   margin-top: auto;
 }
 
-img {
+.image-wrapper {
+  position: relative;
   width: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  object-position: center;
+}
+
+.image-wrapper::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgb(255, 255, 255)
+  );
+}
+
+@media (min-width: 540px) {
+  .tag-line {
+    font-size: 1rem;
+
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 2.75rem;
+    margin-bottom: 10px;
+  }
+
+  .plot {
+    font-size: 1rem;
+    -webkit-line-clamp: 6;
+  }
+
+  @media (min-width: 912px) {
+    header {
+      height: 80vh;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    .plot {
+      -webkit-line-clamp: 7;
+    }
+  }
 }
 </style>

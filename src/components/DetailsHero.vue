@@ -63,11 +63,7 @@
 
 @media (min-width: 912px) {
   .hero-container {
-    height: 80vh;
     overflow-y: hidden;
-  }
-
-  .hero-image {
   }
 }
 </style>

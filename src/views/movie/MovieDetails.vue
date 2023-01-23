@@ -55,8 +55,10 @@ export default {
 }
 
 @media (min-width: 912px) {
+  header {
+    height: 80vh;
+  }
   .info-and-images {
-    padding-top: 35px;
     justify-content: space-between;
   }
 }
