@@ -21,48 +21,79 @@
 <script></script>
 
 <style scoped>
-.images {
+section.images {
   margin-bottom: 25px;
+
+  margin: 30px 0;
 }
 .section-heading {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  margin-left: 15px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 25px 20px;
 }
 
 .gallery {
   display: flex;
   height: 200px;
+
+  padding: 0 10px;
   width: 100%;
   overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-bottom: 50px;
 }
 
-img {
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery img {
   margin-left: 15px;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 565px) {
   section.images {
+    margin-left: -10%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     flex-grow: 1;
+    padding: 0;
   }
 
   .section-heading {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+    color: white;
+    font-size: 1.5rem;
     margin-left: 15px;
+    margin-bottom: 10px;
   }
+
+  .section-heading {
+    display: none;
+  }
+
   .gallery {
-    height: 100px;
+    margin: 20px 0 0 10px;
+    height: 40px;
+    max-height: 150px;
     flex-grow: 1;
+    padding: 0 20px;
+    margin-left: 0;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to left, black, black, transparent);
+    mask-image: linear-gradient(to left, black, black, transparent);
   }
 }
 
 @media (min-width: 912px) {
   .gallery {
-    height: 250px;
+    margin-top: auto;
+
+    margin: auto 0 20px -20px;
+    -webkit-mask-image: unset;
+    mask-image: unset;
   }
 }
 </style>
