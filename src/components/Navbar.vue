@@ -11,10 +11,12 @@ nav {
   width: 100%;
   position: absolute;
   padding-block: 15px;
+  z-index: 20;
 }
 
 nav h1 {
   text-align: center;
+  font-size: 1rem;
 
   color: white;
 }
