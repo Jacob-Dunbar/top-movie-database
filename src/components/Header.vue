@@ -88,7 +88,7 @@ header {
 .plot {
   font-size: 0.7rem;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 15px;
@@ -104,11 +104,17 @@ header {
   background-clip: border-box;
   /* padding: 2px; */
   background-color: rgba(255, 255, 255, 0.341);
+  transition: background-size 2s ease-in-out;
+}
+
+.button-container:hover {
+  background-size: 2000%;
+  transform: scale(1.02);
 }
 
 .button-border {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 2px;
+  background-color: rgba(116, 116, 116, 0.4);
+  padding: 2.5px;
 }
 .button-bg {
   background-color: #0f1116;
@@ -117,11 +123,20 @@ header {
   outline: none;
   border: none;
   padding: 5px 10px;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
   background-position: center;
   background-size: 1000%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(178, 178, 178, 0.4);
+  cursor: pointer;
+  transition: all 2s ease-in-out;
+}
+
+.trailer-button:hover {
+  background-size: 2000%;
 }
 
 .image-wrapper {
@@ -168,41 +183,52 @@ img {
   }
 
   .plot {
-    -webkit-line-clamp: 6;
     margin-bottom: 20px;
   }
 
   @media (min-width: 912px) {
     header {
-      height: 80vh;
+      height: 75vh;
       position: relative;
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        black,
+        black,
+        black,
+        black,
+        black,
+        transparent
+      );
+      mask-image: linear-gradient(to top, transparent, black, transparent 90%);
     }
 
     .copy {
-      padding: 60px;
+      padding: 75px 0 0 75px;
     }
 
     .tag-line {
-      margin-bottom: 35px;
+      margin-bottom: 20px;
     }
 
     .title {
-      font-size: 5rem;
+      font-size: 5.5rem;
       margin-bottom: 30px;
+      font-weight: 600;
+      line-height: 6rem;
     }
 
     .plot {
-      font-size: 1rem;
+      font-size: 0.9rem;
       line-height: 1.2rem;
       width: 80%;
-      -webkit-line-clamp: 6;
+
       margin-bottom: 40px;
       font-weight: normal;
     }
 
     .trailer-button {
-      font-size: 1.25rem;
-      padding: 10px 20px;
+      font-size: 1rem;
+      padding: 10px 15px;
     }
 
     .image-wrapper {
@@ -211,11 +237,16 @@ img {
       margin-left: 5%;
       -webkit-mask-image: linear-gradient(
         to right,
-        transparent -3%,
+        transparent,
         black,
-        transparent 103%
+        transparent 90%
       );
-      mask-image: linear-gradient(to right, transparent 25%, black 75%);
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        black,
+        transparent 90%
+      );
     }
 
     .image-wrapper::after {

@@ -9,11 +9,13 @@
 <style scoped>
 nav {
   width: 100%;
-  background: gray;
+  position: absolute;
+  padding-block: 15px;
 }
 
 nav h1 {
   text-align: center;
-  padding-block: 10px;
+
+  color: white;
 }
 </style>
