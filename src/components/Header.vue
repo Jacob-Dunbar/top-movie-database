@@ -194,7 +194,7 @@ img {
   );
 }
 
-@media (min-width: 541px) {
+@media (min-width: 565px) {
   .tag-line {
     font-size: 0.75rem;
     margin-top: 50px;

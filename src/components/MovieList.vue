@@ -195,7 +195,13 @@ img {
   margin-left: 5px;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 565px) {
+  .section-heading {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 45px;
+    margin-left: 20px;
+  }
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
