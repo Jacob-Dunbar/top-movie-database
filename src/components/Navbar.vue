@@ -9,9 +9,8 @@
 <style scoped>
 nav {
   width: 100%;
-  position: absolute;
+  background: black;
   padding-block: 15px;
-  z-index: 20;
 }
 
 nav h1 {
