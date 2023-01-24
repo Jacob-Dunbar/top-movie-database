@@ -52,7 +52,7 @@ header {
   overflow-x: hidden;
   overflow-y: hidden;
   margin-bottom: 10px;
-  -webkit-mask-image: linear-gradient(
+  /* -webkit-mask-image: linear-gradient(
     to bottom,
     black,
     black,
@@ -69,7 +69,7 @@ header {
     black,
     black,
     transparent
-  );
+  ); */
 }
 
 .blur-bg {
@@ -218,16 +218,17 @@ img {
     margin-bottom: 35px;
   }
 
-  @media (min-width: 913px) {
+  @media (min-width: 912px) {
     header {
       height: 75vh;
       position: relative;
+      margin-bottom: 40px;
     }
 
     .copy {
       margin-top: unset;
       width: 50%;
-      padding: 75px 0 0 75px;
+      padding: 45px 0 0 75px;
     }
 
     .tag-line {
@@ -247,7 +248,7 @@ img {
       line-height: 1.2rem;
       width: 80%;
       -webkit-line-clamp: 3;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       font-weight: normal;
     }
 
@@ -257,50 +258,31 @@ img {
     }
 
     .image-wrapper {
-      width: 30%;
       height: 100%;
       margin-left: 5%;
-      -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        black,
-        transparent 90%
-      );
-      mask-image: linear-gradient(
-        to right,
-        transparent,
-        black,
-        transparent 90%
-      );
     }
 
     .image-wrapper::after {
-      content: " ";
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      display: inline-block;
-      background-image: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0),
-        #0f1116
-      );
+      display: none;
     }
 
     img {
       object-fit: cover;
       width: unset;
       height: 100%;
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black,
+        transparent
+      );
+      mask-image: linear-gradient(to right, transparent, black, transparent);
     }
 
     .blur-bg {
       display: block;
       position: absolute;
+      overflow-y: visible;
       top: 0;
       right: -20%;
       filter: blur(60px);
