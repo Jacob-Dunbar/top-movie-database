@@ -19,10 +19,12 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Work Sans", sans-serif;
   box-sizing: border-box;
 }
 
