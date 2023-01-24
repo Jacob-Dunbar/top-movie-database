@@ -25,26 +25,36 @@
 
 <style scoped>
 section.cast {
-  margin-bottom: 25px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .section-heading {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  margin-left: 15px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 35px;
+  margin-left: 20px;
 }
 .cast-list {
   display: flex;
+  width: 100%;
   margin-top: 20px;
   overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
+.cast-list::-webkit-scrollbar {
+  display: none;
+}
 .member-card {
   display: flex;
   flex-direction: column;
-
-  margin-left: 25px;
+  margin-left: 15px;
+  color: white;
 }
+
 .image-mask {
   width: 120px;
   height: 120px;
@@ -67,12 +77,29 @@ img {
 .member-name {
   text-align: center;
   font-size: 1rem;
+  opacity: 0.8;
   margin-top: 10px;
 }
 .member-role {
   text-align: center;
   font-size: 0.8rem;
-
+  opacity: 0.6;
   margin-top: 10px;
+}
+
+@media (min-width: 565px) {
+  .section-heading {
+    margin: 45px 0 45px 35px;
+  }
+}
+
+@media (min-width: 912px) {
+  .section-heading {
+    margin: 25px 0 25px 75px;
+  }
+
+  .member-card:first-child {
+    margin-left: 75px;
+  }
 }
 </style>
