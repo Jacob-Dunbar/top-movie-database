@@ -5,6 +5,7 @@
       <DetailsInfo />
       <DetailsImages />
     </div>
+    <img class="blur-bg" :src="$store.state.movieDetails.poster" />
   </header>
   <DetailsCast />
   <DetailsReviews />
@@ -36,7 +37,11 @@ export default {
 </script>
 
 <style scoped>
-@media (min-width: 540px) {
+.blur-bg {
+  display: none;
+}
+
+@media (min-width: 565px) {
   header {
     width: 100%;
     display: flex;
@@ -45,7 +50,7 @@ export default {
 
   .info-and-images {
     margin: 0;
-    width: 50%;
+    width: 45%;
     padding-top: 15px;
     flex-shrink: 0;
     flex-grow: 1;
@@ -60,6 +65,16 @@ export default {
   }
   .info-and-images {
     justify-content: space-between;
+  }
+
+  .blur-bg {
+    display: block;
+    position: absolute;
+    top: -40%;
+    left: -15%;
+    filter: blur(60px);
+    width: 70%;
+    z-index: -1;
   }
 }
 </style>
