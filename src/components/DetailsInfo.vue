@@ -1,5 +1,8 @@
 <template>
   <section class="info">
+    <button class="back-button" @click="this.$router.go(-1)">
+      <v-icon scale="0.75" class="star" name="fa-chevron-left" /> back
+    </button>
     <h2 class="title">{{ $store.state.movieDetails.title }}</h2>
     <h4 class="date">{{ $store.state.movieDetails.year }}</h4>
     <span class="rating">{{ $store.state.movieDetails.rating }}</span>
@@ -22,6 +25,22 @@ export default {
 </script>
 
 <style scoped>
+.back-button {
+  border: none;
+  cursor: pointer;
+  margin: -35px 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 5px 7px 5px 4px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: black;
+
+  opacity: 0.8;
+  color: white;
+}
 section.info {
   margin-top: 10px;
   padding: 0 20px;
@@ -72,14 +91,18 @@ section.info {
 
   .title {
     font-size: 1.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .plot {
-    overflow-y: hidden;
     font-size: rem;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    overflow: hidden;
     margin-top: 25px;
   }
 }
@@ -88,6 +111,10 @@ section.info {
   .title {
     margin-top: 10px;
     font-size: 3.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .date {

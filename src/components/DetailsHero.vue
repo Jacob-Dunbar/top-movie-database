@@ -2,9 +2,6 @@
   <div class="hero-container">
     <img class="hero-image" :src="$store.state.movieDetails.poster" />
   </div>
-  <button class="back-button" @click="this.$router.go(-1)">
-    <v-icon scale="0.75" class="star" name="fa-chevron-left" /> back
-  </button>
 </template>
 
 <script></script>
@@ -28,23 +25,6 @@
   mask-image: linear-gradient(to bottom, black, black, black, transparent);
 }
 
-.back-button {
-  border: none;
-  cursor: pointer;
-  margin: -25px 0 20px 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  padding: 5px 7px 5px 4px;
-  font-size: 0.7rem;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  background: black;
-
-  opacity: 0.8;
-  color: white;
-}
-
 @media (min-width: 565px) {
   .hero-container {
     display: block;
@@ -56,8 +36,8 @@
   .back-button {
     position: absolute;
     z-index: 10;
-    top: 90px;
-    left: 0px;
+    top: 110px;
+    left: 55px;
 
     padding: 8px 11px 8px 8px;
   }
@@ -73,6 +53,14 @@
     overflow-y: hidden;
     display: flex;
     justify-content: center;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black,
+      black,
+      black,
+      transparent
+    );
+    mask-image: linear-gradient(to bottom, black, black, black, transparent);
   }
 
   .hero-image {
