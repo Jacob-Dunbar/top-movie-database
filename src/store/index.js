@@ -72,10 +72,15 @@ export default createStore({
     },
     setComingSoon(state, data) {
       state.comingSoon = data;
-      console.log(state.comingSoon);
+    },
+    clearComingSoon(state) {
+      state.comingSoon = null;
     },
     setComingSoonPoster(state, data) {
       state.comingSoonPoster = data.posters[0].link;
+    },
+    clearComingSoonPoster(state) {
+      state.comingSoonPoster = "";
     },
     setTrailerUrl(state, data) {
       state.trailerUrl = data;
@@ -138,6 +143,8 @@ export default createStore({
         .catch((err) => console.log(err.message));
     },
     getComingSoonData() {
+      this.commit("clearComingSoon");
+      this.commit("clearComingSoonPoster");
       axios
         .get(
           `https://imdb-api.com/en/API/ComingSoon/${process.env.VUE_APP_API_KEY}`

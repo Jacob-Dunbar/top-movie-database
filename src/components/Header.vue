@@ -1,6 +1,9 @@
 <template>
   <header v-if="$store.state.comingSoon">
     <div class="wrapper">
+      <button class="reload" @click="$store.dispatch('getComingSoonData')">
+        Next Movie
+      </button>
       <div class="copy">
         <h3 class="tag-line">coming soon...</h3>
         <h1 class="title">{{ $store.state.comingSoon.title }}</h1>
@@ -51,6 +54,7 @@
       :src="$store.state.comingSoon.image"
     />
   </header>
+
   <div v-else><Loading /></div>
 </template>
 
@@ -78,6 +82,24 @@ header {
   overflow-x: hidden;
   overflow-y: hidden;
   margin-bottom: 10px;
+}
+
+.reload {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.reload:hover {
+  transform: scale(1.05);
 }
 .desktop {
   display: none;
@@ -242,6 +264,10 @@ img {
       height: 75vh;
       position: relative;
       margin-bottom: 40px;
+    }
+
+    .reload {
+      display: block;
     }
 
     .desktop {
