@@ -136,6 +136,7 @@ img {
 
 .copy {
   padding: 5px 5px;
+  height: 100%;
 }
 
 .top-spot {
@@ -184,6 +185,7 @@ img {
 
 .rating-component {
   display: none;
+  margin-top: auto;
 }
 
 .movie-card:first-child .rating-component {
@@ -295,6 +297,7 @@ img {
 
   .movie-card:first-child .title {
     font-size: 2.5rem;
+    margin-bottom: 20px;
     font-weight: bold;
   }
 }
