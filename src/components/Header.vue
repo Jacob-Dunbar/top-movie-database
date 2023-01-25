@@ -57,6 +57,10 @@
 <script>
 import Loading from "../components/Loading.vue";
 export default {
+  mounted() {
+    this.$store.commit("clearMovieDetails");
+  },
+
   components: { Loading },
   computed: {
     posterImage: {
@@ -302,7 +306,7 @@ img {
     .blur-bg {
       display: block;
       position: absolute;
-      overflow-y: visible;
+      /* overflow-y: visible; */
       top: 0;
       right: -20%;
       filter: blur(60px);
