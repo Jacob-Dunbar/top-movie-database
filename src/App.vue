@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <router-view />
+  <router-view class="content" />
   <Footer />
 </template>
 
@@ -12,8 +12,8 @@ export default {
   name: "App",
   components: { Navbar, Footer },
   mounted() {
-    // this.$store.dispatch("getComingSoonData");
-    // this.$store.dispatch("get250Data");
+    this.$store.dispatch("getComingSoonData");
+    this.$store.dispatch("get250Data");
   },
 };
 </script>
@@ -35,5 +35,10 @@ body {
 a {
   color: #000;
   text-decoration: none;
+}
+
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 </style>
