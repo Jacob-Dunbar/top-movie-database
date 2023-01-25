@@ -5,9 +5,8 @@
       <button @click="$store.commit('sortByTitle')">sort by title</button>
       <button @click="$store.commit('sortByRank')">sort by rank</button>
     </div>
-    <main class="grid">
+    <main class="grid" v-if="$store.state.top250.length">
       <RouterLink
-        v-if="$store.state.top250.length"
         v-for="movie in $store.state.top250"
         :key="movie.id"
         class="movie-card"
@@ -28,11 +27,14 @@
         </div></RouterLink
       >
     </main>
+    <Loading v-else />
   </section>
 </template>
 
 <script>
+import Loading from "../components/Loading.vue";
 export default {
+  components: { Loading },
   mounted() {
     // $store.commit("setMovieDetailsId", $store.state.top250[0].id);
     // $store.dispatch("getMovieDetails");
@@ -62,6 +64,7 @@ section.movie-list {
 
 .sorting-buttons button {
   background: none;
+  margin: 0 5px;
   border: 2px solid rgba(255, 255, 255, 0.6);
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
@@ -92,6 +95,7 @@ section.movie-list {
   display: flex;
   flex-direction: column;
   padding: 5px;
+
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -106,6 +110,11 @@ section.movie-list {
 
 img {
   width: 100%;
+}
+
+.movie-card:first-child img {
+  width: 100%;
+  min-height: 600px;
 }
 
 .rank {
@@ -141,6 +150,10 @@ img {
   margin-top: 3px;
   font-size: 1rem;
   font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .movie-card:first-child .title {
@@ -255,6 +268,7 @@ img {
   .section-heading {
     font-size: 2.5rem;
     margin-left: 40px;
+    margin-bottom: 40px;
   }
   .sorting-buttons {
     margin-bottom: 45px;
