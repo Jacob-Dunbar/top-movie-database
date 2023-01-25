@@ -16,9 +16,15 @@ const routes = [
   },
 ];
 
+const layoutId = document.getElementById("layout-scroll-container");
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 };
+  },
 });
 
 export default router;
