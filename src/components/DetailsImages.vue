@@ -35,7 +35,6 @@ section.images {
 
 .gallery {
   display: flex;
-  height: 200px;
 
   padding: 0 10px;
   width: 100%;
@@ -51,7 +50,7 @@ section.images {
 
 .gallery img {
   margin-left: 15px;
-  height: 200px;
+  height: 100%;
 }
 
 @media (min-width: 565px) {
@@ -77,7 +76,7 @@ section.images {
 
   .gallery {
     margin: 20px 0 0 10px;
-    height: 40px;
+
     max-height: 150px;
     flex-grow: 1;
     padding: 0 20px;
@@ -85,6 +84,10 @@ section.images {
     width: 100%;
     -webkit-mask-image: linear-gradient(to left, black, black, transparent);
     mask-image: linear-gradient(to left, black, black, transparent);
+  }
+
+  .gallery img {
+    max-height: 150px;
   }
 }
 
