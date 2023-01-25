@@ -18,7 +18,7 @@
           <p class="top-spot">The top spot</p>
           <h2 class="title">{{ movie.title }}</h2>
           <h3 class="year">{{ movie.year }}</h3>
-          <p class="plot">{{ $store.state.movieDetails.plot }}</p>
+
           <div class="rating-component">
             <v-icon scale="2.5" class="star" name="bi-star-fill" />
             <span class="rating">{{ movie.imDbRating }}</span>
@@ -35,10 +35,6 @@
 import Loading from "../components/Loading.vue";
 export default {
   components: { Loading },
-  mounted() {
-    // $store.commit("setMovieDetailsId", $store.state.top250[0].id);
-    // $store.dispatch("getMovieDetails");
-  },
 };
 </script>
 
@@ -198,6 +194,7 @@ img {
   font-size: 3rem;
   font-weight: 600;
   margin-right: 5px;
+
   color: white;
 }
 
@@ -237,7 +234,7 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 
@@ -250,7 +247,7 @@ img {
     font-weight: bold;
     font-size: 0.6rem;
 
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 5px 10px;
   }
   .movie-card:first-child .plot {
