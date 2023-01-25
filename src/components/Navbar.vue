@@ -1,7 +1,7 @@
 <template>
   <nav>
     <RouterLink to="/"><Logo class="logo" /></RouterLink>
-    <p>Top Movie Database</p>
+    <!-- <p>Top Movie Database</p> -->
   </nav>
 </template>
 
@@ -21,11 +21,11 @@ nav {
   background: #0f1116;
 
   display: flex;
-  padding: 15px 75px 10px 75px;
+  padding: 14px 75px 10px 75px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   color: white;
-  opacity: 0.6;
+
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.8rem;
@@ -33,10 +33,12 @@ nav {
 
 .logo {
   height: 30px;
-  opacity: 0.8;
+  cursor: pointer;
 }
-.logo:hover {
-  height: 30px;
-  opacity: 1;
-}
+
+/* @media (min-width: 912px) {
+  nav {
+    justify-content: start;
+  }
+} */
 </style>

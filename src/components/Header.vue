@@ -1,12 +1,22 @@
 <template>
-  <header>
-    <div class="wrapper" v-if="$store.state.comingSoon">
+  <header v-if="$store.state.comingSoon">
+    <div class="wrapper">
       <div class="copy">
         <h3 class="tag-line">coming soon...</h3>
         <h1 class="title">{{ $store.state.comingSoon.title }}</h1>
-        <p class="plot">{{ $store.state.comingSoon.plot }}</p>
+        <p v-if="$store.state.trailerUrl.videoDescription" class="plot">
+          {{ $store.state.trailerUrl.videoDescription }}
+        </p>
+        <div class="plot" v-else>
+          <p>
+            New {{ $store.state.comingSoon.genreList[0].value }}
+            , starring
+            {{ $store.state.comingSoon.stars }}
+          </p>
+          <p>Coming to screens {{ $store.state.comingSoon.releaseState }}</p>
+        </div>
         <div
-          class="button-container"
+          class="button-container desktop"
           v-bind:style="{
             'background-image': 'url(' + posterImage + ')',
           }"
@@ -27,19 +37,31 @@
         </div>
       </div>
       <div class="image-wrapper">
-        <img :src="$store.state.comingSoon.image" />
+        <img
+          v-if="$store.state.comingSoonPoster"
+          :src="$store.state.comingSoonPoster"
+        />
+        <img v-else :src="$store.state.comingSoon.image" />
       </div>
     </div>
-    <img class="blur-bg" :src="$store.state.comingSoon.image" />
+
+    <img
+      v-if="$store.state.comingSoon"
+      class="blur-bg"
+      :src="$store.state.comingSoon.image"
+    />
   </header>
+  <div v-else><Loading /></div>
 </template>
 
 <script>
+import Loading from "../components/Loading.vue";
 export default {
+  components: { Loading },
   computed: {
     posterImage: {
       get() {
-        return this.$store.state.comingSoon.image;
+        return this.$store.state.comingSoonPoster;
       },
     },
   },
@@ -52,26 +74,10 @@ header {
   overflow-x: hidden;
   overflow-y: hidden;
   margin-bottom: 10px;
-  /* -webkit-mask-image: linear-gradient(
-    to bottom,
-    black,
-    black,
-    black,
-    black,
-    black,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    black,
-    black,
-    black,
-    black,
-    black,
-    transparent
-  ); */
 }
-
+.desktop {
+  display: none;
+}
 .blur-bg {
   display: none;
 }
@@ -103,21 +109,30 @@ header {
   min-width: 150px;
 }
 .title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: 15px;
   min-width: 200px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
 }
 
 .plot {
   font-size: 0.6rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+
   margin-bottom: 20px;
   opacity: 0.6;
   min-width: 150px;
   line-height: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.plot p:nth-child(2) {
+  margin-top: 10px;
 }
 
 .button-container {
@@ -197,8 +212,8 @@ img {
 @media (min-width: 565px) {
   .tag-line {
     font-size: 0.75rem;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
 
   .copy {
@@ -212,9 +227,9 @@ img {
   }
 
   .plot {
-    min-width: 200px;
-    font-size: 0.8rem;
-    line-height: 1.1rem;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
     margin-bottom: 35px;
   }
 
@@ -225,6 +240,10 @@ img {
       margin-bottom: 40px;
     }
 
+    .desktop {
+      display: block;
+    }
+
     .copy {
       margin-top: unset;
       width: 50%;
@@ -232,7 +251,7 @@ img {
     }
 
     .tag-line {
-      margin-bottom: 20px;
+      margin-bottom: 60px;
     }
 
     .title {
@@ -240,14 +259,15 @@ img {
       margin-bottom: 30px;
       font-weight: 600;
       line-height: 6rem;
-      min-width: 500px;
+      min-width: 570px;
     }
 
     .plot {
       font-size: 0.9rem;
       line-height: 1.2rem;
-      width: 80%;
-      -webkit-line-clamp: 3;
+      width: 100%;
+      max-width: 450px;
+      -webkit-line-clamp: 5;
       margin-bottom: 35px;
       font-weight: normal;
     }
