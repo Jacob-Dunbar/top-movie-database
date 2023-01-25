@@ -29,9 +29,9 @@ export default {
   },
 
   mounted() {
-    // this.$store.commit("setMovieDetailsId", this.id);
-    // this.$store.dispatch("getMovieDetails");
-    // this.$store.dispatch("getMovieReviews");
+    this.$store.commit("setMovieDetailsId", this.id);
+    this.$store.dispatch("getMovieDetails");
+    this.$store.dispatch("getMovieReviews");
   },
 };
 </script>
@@ -61,7 +61,7 @@ export default {
 
 @media (min-width: 912px) {
   header {
-    height: 80vh;
+    height: 75vh;
   }
   .info-and-images {
     justify-content: space-between;

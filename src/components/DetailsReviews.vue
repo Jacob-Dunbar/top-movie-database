@@ -13,7 +13,7 @@
       <h1 class="title">{{ review.title }}</h1>
       <p class="content">{{ review.content }}</p>
       <button class="full-review">
-        <a :href="review.reviewLink">Read full review</a>
+        <a :href="review.reviewLink">See full review</a>
       </button>
     </div>
     <div class="button-container">
@@ -58,6 +58,7 @@ section.reviews {
   margin: 20px;
   padding: 15px;
   color: white;
+  border-radius: 10px;
 }
 
 .review-card:hover {
@@ -159,7 +160,7 @@ section.reviews {
 
   .review-card {
     margin: 0 35px 20px 35px;
-    padding: 15px;
+    padding: 25px;
     color: white;
   }
   .content {
@@ -175,7 +176,7 @@ section.reviews {
 
 @media (min-width: 912px) {
   .section-heading {
-    margin: 55px 0 55px 75px;
+    margin: 55px 0 75px 75px;
   }
   .review-card {
     max-width: 900px;
