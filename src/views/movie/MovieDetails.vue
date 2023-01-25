@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-if="$store.state.movieDetails">
     <DetailsHero />
     <div class="info-and-images">
       <DetailsInfo />
@@ -7,8 +7,11 @@
     </div>
     <img class="blur-bg" :src="$store.state.movieDetails.poster" />
   </header>
-  <DetailsCast />
-  <DetailsReviews />
+  <Loading v-else />
+  <DetailsCast v-if="$store.state.movieDetails" />
+  <Loading v-else />
+  <DetailsReviews v-if="$store.state.movieDetails" />
+  <Loading v-else />
 </template>
 
 <script>
@@ -17,6 +20,7 @@ import DetailsInfo from "../../components/DetailsInfo.vue";
 import DetailsImages from "../../components/DetailsImages.vue";
 import DetailsCast from "../../components/DetailsCast.vue";
 import DetailsReviews from "../../components/DetailsReviews.vue";
+import Loading from "../../components/Loading.vue";
 
 export default {
   props: ["id"],
@@ -26,6 +30,7 @@ export default {
     DetailsImages,
     DetailsCast,
     DetailsReviews,
+    Loading,
   },
 
   mounted() {
