@@ -49,8 +49,8 @@ section.images {
 }
 
 .gallery img {
-  margin-left: 15px;
-  height: 100%;
+  margin-left: 10px;
+  max-height: 250px;
 }
 
 @media (min-width: 565px) {
